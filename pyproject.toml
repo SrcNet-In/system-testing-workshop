@@ -5,13 +5,14 @@ description = ""
 authors = ["Sayan Roy <sayan.roy@thoughtworks.com>"]
 readme = "README.md"
 
-packages = [{include = "your_project_name"}]
+
 
 [tool.poetry.dependencies] # Dependencies must be under this tool-specific section
 python = ">=3.10,<3.11"
 requests = {version = ">=2.32.5,<3.0.0"}
 pytest = "*"
 pytest-bdd = "*"
+pytest-playwright = "*"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

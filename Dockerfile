@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright/python:v1.54.0-jammy
+FROM  mcr.microsoft.com/playwright/python:v1.55.0-jammy
 
 USER root
 
@@ -19,6 +19,7 @@ RUN poetry lock --no-update
 RUN poetry install --no-root
 
 COPY --chown=user . .
+RUN chown -R user:user /opt/System-Test-Demo-BDD
 
 # Optional: Only create symlink if src exists
 RUN [ -d "src" ] && mkdir -p /app && ln -s /opt/System-Test-Demo-BDD/src /app/src || true
