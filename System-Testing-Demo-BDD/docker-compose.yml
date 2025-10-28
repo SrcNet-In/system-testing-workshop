@@ -1,0 +1,20 @@
+version: "3.5"
+services:
+  core:
+    container_name: system-testing-bdd-demo
+    image: system-testing-bdd-demo:latest
+    develop:
+      watch:
+        - path: tests
+          action: rebuild
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+  pushgateway:
+    image: prom/pushgateway:latest
+    container_name: pushgateway-demo
+    ports:
+      - "9091:9091"
